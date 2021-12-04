@@ -6,7 +6,7 @@
  * Vestibulum commodo. Ut rhoncus gravida arcu.
  */
 
-package cl.ucn.disc.dsm.lrojas.news;
+package cl.ucn.disc.dsm.lrojas.news.model;
 
 import java.time.ZonedDateTime;
 import lombok.Getter;

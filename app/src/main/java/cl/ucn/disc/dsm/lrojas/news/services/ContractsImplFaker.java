@@ -6,8 +6,9 @@
  * Vestibulum commodo. Ut rhoncus gravida arcu.
  */
 
-package cl.ucn.disc.dsm.lrojas.news;
+package cl.ucn.disc.dsm.lrojas.news.services;
 
+import cl.ucn.disc.dsm.lrojas.news.model.News;
 import com.github.javafaker.Faker;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
