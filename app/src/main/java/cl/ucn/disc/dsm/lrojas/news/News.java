@@ -18,7 +18,6 @@ import net.openhft.hashing.LongHashFunction;
  * @author Luis Rojas Olivera
  */
 public final class News {
-
   /**
    * The Constructor of News
    * @param title can't be null.
