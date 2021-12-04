@@ -19,6 +19,6 @@ public interface Contracts {
   /**
    * @return all the News in the backend sorted by publishedAt
    */
-  List<News> retrieveNews();
+  List<News> retrieveNews(int newsQuantity);
 
 }
