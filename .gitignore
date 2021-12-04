@@ -12,6 +12,7 @@
 /.idea/misc.xml
 /.idea/compiler.xml
 /.idea/vcs.xml
+/.idea/copyright
 
 .DS_Store
 /build
