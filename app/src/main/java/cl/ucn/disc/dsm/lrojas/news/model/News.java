@@ -8,7 +8,7 @@
 
 package cl.ucn.disc.dsm.lrojas.news.model;
 
-import java.time.ZonedDateTime;
+import org.threeten.bp.ZonedDateTime;
 import lombok.Getter;
 import net.openhft.hashing.LongHashFunction;
 
@@ -136,4 +136,5 @@ public final class News {
    */
   @Getter
   private final ZonedDateTime publishedAt;
+
 }
