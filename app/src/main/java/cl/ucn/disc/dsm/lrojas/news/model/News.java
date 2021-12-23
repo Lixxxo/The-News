@@ -7,8 +7,7 @@
  */
 
 package cl.ucn.disc.dsm.lrojas.news.model;
-
-import org.threeten.bp.ZonedDateTime;
+import java.time.ZonedDateTime;
 import lombok.Getter;
 import net.openhft.hashing.LongHashFunction;
 
