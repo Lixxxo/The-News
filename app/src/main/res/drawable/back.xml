@@ -5,13 +5,6 @@
   ~ Proin dapibus sapien vel ante. Aliquam erat volutpat. Pellentesque sagittis ligula eget metus.
   ~ Vestibulum commodo. Ut rhoncus gravida arcu.
   -->
-<resources>
-<item name="rn_tv_title" type="id" />
-<item name="rn_tv_source" type="id" />
-<item name="rn_tv_author" type="id" />
-<item name="rn_tv_description" type="id" />
-<item name="rn_tv_publishedAt" type="id" />
-<item name="rn_img_news" type="id" />
 
-
-</resources>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle" >
+</shape>
