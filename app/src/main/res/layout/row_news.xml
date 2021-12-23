@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2021. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  ~ Morbi non lorem porttitor neque feugiat blandit. Ut vitae ipsum eget quam lacinia accumsan.
+  ~ Etiam sed turpis ac ipsum condimentum fringilla. Maecenas magna.
+  ~ Proin dapibus sapien vel ante. Aliquam erat volutpat. Pellentesque sagittis ligula eget metus.
+  ~ Vestibulum commodo. Ut rhoncus gravida arcu.
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:orientation="vertical"
+  android:layout_width="match_parent"
+  android:minHeight="?attr/minTouchTargetSize"
+  android:layout_height="wrap_content">
+
+  <TextView
+    android:id="@+id/rn_tv_source"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textStyle="italic"
+    android:textAppearance="?attr/textAppearanceListItem"
+    android:text="source"
+    tools:ignore="HardcodedText" />
+
+  <TextView
+    android:id="@+id/rn_tv_title"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textStyle="bold"
+    android:textAppearance="?attr/textAppearanceListItem"
+    android:text="Title"
+    tools:ignore="HardcodedText" />
+
+  <TextView
+    android:id="@+id/rn_tv_description"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textStyle="normal"
+    android:textAppearance="?attr/textAppearanceListItem"
+    android:text="description"
+    tools:ignore="HardcodedText" />
+
+  <TextView
+    android:id="@+id/rn_tv_author"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textStyle="italic"
+    android:textAppearance="?attr/textAppearanceListItem"
+    android:text="author"
+    tools:ignore="HardcodedText" />
+
+
+  <TextView
+    android:id="@+id/rn_tv_publishedAt"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textStyle="italic"
+    android:textAppearance="?attr/textAppearanceListItem"
+    android:text="publishedAt"
+    tools:ignore="HardcodedText" />
+
+  <View
+    android:layout_width="fill_parent"
+    android:layout_height="1dp"
+    android:background="@color/design_default_color_secondary_variant"
+    />
+
+
+</LinearLayout>
