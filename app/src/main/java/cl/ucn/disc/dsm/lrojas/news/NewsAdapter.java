@@ -1,6 +1,7 @@
 package cl.ucn.disc.dsm.lrojas.news;
 
-import android.media.Image;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 
@@ -12,7 +13,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import cl.ucn.disc.dsm.lrojas.news.model.News;
-import java.time.ZoneId;
+import com.squareup.picasso.Picasso;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
 import java.util.ArrayList;
@@ -63,8 +64,8 @@ public final class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHold
 
     // Step 1: Get the inflater
     final LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-    // Step 2: Inflate the row of Contact
-    final View newsView = layoutInflater.inflate(R.layout.row_news, parent, false);
+    // Step 2: Inflate the News card
+    final View newsView = layoutInflater.inflate(R.layout.card_news, parent, false);
     // Step 3: Build the ViewHolder
     return new ViewHolder(newsView);
   }
@@ -92,15 +93,21 @@ public final class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHold
     // Get news at position
     final News news = this.newsList.get(position);
 
+    // TextView
     holder.title.setText(news.getTitle());
     holder.source.setText(news.getSource());
     holder.author.setText(news.getAuthor());
-    //holder.url.setText(news.getUrl());
-    //holder.urlImage.setImageResource(news.getUrlImage().);
     holder.description.setText(news.getDescription());
-    //holder.content.setText(news.getContent());
     holder.publishedAt.setText(
         news.getPublishedAt().format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM, FormatStyle.MEDIUM)));
+
+    // Image
+    Picasso.get().load(news.getUrlImage())
+        .error(R.drawable.ic_default_news)
+        .into(holder.image);
+
+    // Url to redirect
+    holder.url_redirection = news.getUrl();
 
   }
 
@@ -122,22 +129,28 @@ public final class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHold
     private TextView title;
     private TextView source;
     private TextView author;
-    private TextView url;
-    private ImageView urlImage;
+    private ImageView image;
     private TextView description;
-    private TextView content;
     private TextView publishedAt;
+
+    private String url_redirection;
 
     public ViewHolder(View view){
       super(view);
       this.title = view.findViewById(R.id.rn_tv_title);
       this.source = view.findViewById(R.id.rn_tv_source);
       this.author = view.findViewById(R.id.rn_tv_author);
-      this.url = view.findViewById(R.id.rn_tv_url);
-      this.urlImage = view.findViewById(R.id.rn_tv_urlImage);
+      this.image = view.findViewById(R.id.rn_img_news);
       this.description = view.findViewById(R.id.rn_tv_description);
-      this.content = view.findViewById(R.id.rn_tv_content);
       this.publishedAt = view.findViewById(R.id.rn_tv_publishedAt);
+
+      view.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+          Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url_redirection));
+          view.getContext().startActivity(browserIntent);
+        }
+      });
     }
   }
 }
